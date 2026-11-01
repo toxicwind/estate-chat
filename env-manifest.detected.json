@@ -1,0 +1,83 @@
+{
+  "product": "estate-chat",
+  "path": "/home/toxic/pens/ranch/products/estate-chat",
+  "files": 11,
+  "detected_at": "2026-10-30T06:11:06.546638Z",
+  "env_vars": {
+    "DISPATCH_DIRECTIVES": [
+      "drill-dispatch.sh"
+    ],
+    "DISPATCH_MIRROR_DIR": [
+      "chat.ts"
+    ],
+    "ESTATE_CHAT_BASE": [
+      "relay-watch.sh"
+    ],
+    "ESTATE_CHAT_PORT": [
+      "chat.ts"
+    ],
+    "ESTATE_CHAT_SEED_JSONL": [
+      "chat.ts"
+    ],
+    "ESTATE_CHAT_STATE_DIR": [
+      "chat.ts",
+      "relay-watch.sh"
+    ],
+    "ESTATE_CHAT_TOKEN": [
+      "chat.ts"
+    ],
+    "ESTATE_CHAT_TOKEN_FILE": [
+      "chat.ts",
+      "relay-watch.sh"
+    ],
+    "HEARTBEAT_DEAD_S": [
+      "dispatch.ts"
+    ],
+    "MIRROR": [
+      "drill-dispatch.sh"
+    ],
+    "PORT": [
+      "chat.ts",
+      "drill-dispatch.sh"
+    ],
+    "RELAY_AGENT_ID": [
+      "relay-watch.sh"
+    ],
+    "STATE": [
+      "drill-dispatch.sh"
+    ],
+    "STATE_DIR": [
+      "chat.ts"
+    ],
+    "TOKEN": [
+      "chat.ts"
+    ],
+    "VERSION": [
+      "chat.ts"
+    ],
+    "claimed_by": [
+      "dispatch.ts"
+    ],
+    "col": [
+      "dispatch.ts"
+    ],
+    "lease_id": [
+      "dispatch.ts"
+    ],
+    "name": [
+      "chat.ts"
+    ],
+    "room_id": [
+      "chat.ts"
+    ],
+    "state": [
+      "dispatch.ts"
+    ],
+    "task_id": [
+      "dispatch.ts"
+    ],
+    "workspaceFolder": [
+      ".vscode/mcp.json"
+    ]
+  }
+}
