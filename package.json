@@ -5,9 +5,9 @@
     "bun-types": "^1.4.4",
     "@types/bun": "latest"
   },
-  "name": "estate-chat",
+  "name": "Pens-chat",
   "scripts": {
-    "check": "bun build chat.ts --outdir=/tmp/estate-chat-check --target=bun",
+    "check": "bun build chat.ts --outdir=/tmp/Pens-chat-check --target=bun",
     "mcp": "bun run chat.ts mcp",
     "start": "bun run chat.ts",
     "validate": "bun run typecheck && bun run test",

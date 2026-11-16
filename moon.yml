@@ -1,6 +1,6 @@
 $schema: 'https://moonrepo.dev/schemas/project.json'
 
-# estate-chat — ranch component (Greek-named where descriptive).
+# Pens-chat — ranch component (Greek-named where descriptive).
 language: 'typescript'
 stack: 'backend'
 tags:

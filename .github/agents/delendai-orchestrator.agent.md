@@ -1,7 +1,7 @@
 ---
 name: delendai-orchestrator
 description: Multi-agent orchestrator for delendai
-tools: [read, search, edit, execute, todo, agent, DelendAI:estate-chat/*]
+tools: [read, search, edit, execute, todo, agent, DelendAI:Pens-chat/*]
 user-invocable: true
 ---
 

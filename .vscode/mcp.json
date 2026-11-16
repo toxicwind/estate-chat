@@ -1,6 +1,6 @@
 {
 	"servers": {
-		"DelendAI:estate-chat": {
+		"DelendAI:Pens-chat": {
 			"type": "stdio",
 			"command": "bunx",
 			"args": [
@@ -11,7 +11,7 @@
 				"--workspace",
 				"${workspaceFolder}",
 				"--name",
-				"DelendAI:estate-chat"
+				"DelendAI:Pens-chat"
 			]
 		}
 	}

@@ -1,7 +1,7 @@
 ---
 name: delendai-delivery-verifier
 description: Acceptance and gates verifier
-tools: [read, search, edit, execute, todo, DelendAI:estate-chat/*]
+tools: [read, search, edit, execute, todo, DelendAI:Pens-chat/*]
 user-invocable: false
 ---
 

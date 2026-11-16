@@ -1,4 +1,4 @@
-// estate-chat v1.3.0 — first-class fleet coordination server.
+// Pens-chat v1.3.0 — first-class fleet coordination server.
 // Bun + TypeScript. HTTP API + WebSocket push + MCP-over-stdio. SQLite state.
 // Fleet dispatch (durable lease-based task queue) rides in-process (e3918e04).
 // Bun + TypeScript. HTTP API + WebSocket push + MCP-over-stdio. SQLite state.
@@ -207,7 +207,7 @@ const store = {
   // this endpoint is how every lane reads the same page.
   consolidatedState() {
     return {
-      service: { name: "estate-chat", version: VERSION, uptime_s: Math.floor((Date.now() - BOOT_AT) / 1000) },
+      service: { name: "Pens-chat", version: VERSION, uptime_s: Math.floor((Date.now() - BOOT_AT) / 1000) },
       presence: this.liveAgents(),
       activity: this.activity(),
       decisions: this.recentDecisions(50),
@@ -295,7 +295,7 @@ async function handleFetch(req: Request, server: any): Promise<Response> {
       rooms: (db.query("SELECT COUNT(*) AS c FROM rooms").get() as { c: number }).c,
       messages: (db.query("SELECT COUNT(*) AS c FROM messages").get() as { c: number }).c,
     };
-    return json({ ok: true, service: "estate-chat", version: VERSION, uptime_s: Math.floor((Date.now() - BOOT_AT) / 1000), counts, ts: nowISO() });
+    return json({ ok: true, service: "Pens-chat", version: VERSION, uptime_s: Math.floor((Date.now() - BOOT_AT) / 1000), counts, ts: nowISO() });
   }
 
   // websocket stream
@@ -319,7 +319,7 @@ async function handleFetch(req: Request, server: any): Promise<Response> {
       return failR(rpc?.id ?? null, -32600, "invalid JSON-RPC 2.0 request");
     try {
       if (rpc.method === "initialize")
-        return okR(rpc.id, { protocolVersion: "2024-11-05", capabilities: { tools: {} }, serverInfo: { name: "estate-chat", version: VERSION } });
+        return okR(rpc.id, { protocolVersion: "2024-11-05", capabilities: { tools: {} }, serverInfo: { name: "Pens-chat", version: VERSION } });
       if (rpc.method === "notifications/initialized" || String(rpc.method).startsWith("notifications/"))
         return okR(rpc.id, {});
       if (rpc.method === "tools/list") return okR(rpc.id, { tools: MCP_TOOLS });
@@ -445,7 +445,7 @@ async function runMcp() {
     try { msg = JSON.parse(t); } catch { continue; }
     try {
       if (msg.method === "initialize") {
-        respond(msg.id, { protocolVersion: "2024-11-05", capabilities: { tools: {} }, serverInfo: { name: "estate-chat", version: VERSION } });
+        respond(msg.id, { protocolVersion: "2024-11-05", capabilities: { tools: {} }, serverInfo: { name: "Pens-chat", version: VERSION } });
       } else if (msg.method === "notifications/initialized" || msg.method?.startsWith("notifications/")) {
         // ack-only
       } else if (msg.method === "tools/list") {
@@ -498,4 +498,4 @@ const hosts = ["127.0.0.1", ...(tsIP ? [tsIP] : [])];
 for (const hostname of hosts) {
   Bun.serve({ port: PORT, hostname, fetch: handleFetch, websocket: wsHandlers });
 }
-console.log(`[chat] estate-chat v${VERSION} listening on ${hosts.map((h) => `${h}:${PORT}`).join(" and ")} (state: ${STATE_DIR}/chat.db)`);
+console.log(`[chat] Pens-chat v${VERSION} listening on ${hosts.map((h) => `${h}:${PORT}`).join(" and ")} (state: ${STATE_DIR}/chat.db)`);

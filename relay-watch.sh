@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # relay-watch.sh — outbound leg of the #relay (WhatsApp) bridge.
-# Polls estate-chat /v1/state for new decision-kind messages since the
+# Polls Pens-chat /v1/state for new decision-kind messages since the
 # durable watermark and prints them for the relay agent. Prints QUIET when
 # there is nothing new (the relay agent then stays silent).
 #
@@ -18,9 +18,9 @@
 # follow-up sweep via /v1/rooms/<room>/messages instead.
 set -u
 
-STATE_DIR="${ESTATE_CHAT_STATE_DIR:-/home/toxic/pens/estate/tools/estate-chat/state}"
+STATE_DIR="${ESTATE_CHAT_STATE_DIR:-/home/toxic/pens/Pens/tools/Pens-chat/state}"
 WM="$STATE_DIR/relay-watermark"
-TOKEN_FILE="${ESTATE_CHAT_TOKEN_FILE:-/home/toxic/.config/estate-chat-token}"
+TOKEN_FILE="${ESTATE_CHAT_TOKEN_FILE:-/home/toxic/.config/Pens-chat-token}"
 BASE="${ESTATE_CHAT_BASE:-http://127.0.0.1:25120}"
 RELAY_AGENT="${RELAY_AGENT_ID:-20260918-whatsapp-d0d198ad}"
 
